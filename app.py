@@ -4,7 +4,7 @@ import streamlit as st
 def main():
     st.header("welcome to the streamlit cli!")
 
-    components = ["openai_connector", "document_parser"]
+    components = ["api_connector", "document_parser"]
 
     st.multiselect(
         label="select a component",
@@ -16,9 +16,9 @@ def main():
 
 
 def build_project():
+    st.write(f" type of multi_select element: {st.session_state.multi_select} ")
     for component in st.session_state.multi_select:
         st.write (f" adding {component} to the project")
-    st.write(st.session_state.multi_select[0])
 
 
 
